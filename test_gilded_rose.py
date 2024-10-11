@@ -12,10 +12,10 @@ class GildedRoseTest(unittest.TestCase):
     #     self.assertEquals("fixme", items[0].name)
 
     def test_aged_brie(self):
-        items = [Item("Aged Brie", -1, 5)]  # Aged Brie at max quality, past sell-by date
+        items = [Item("Aged Brie", 1, 52)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        self.assertEqual(3, items[0].quality)  # Quality should still be 50
+        self.assertEqual(50, items[0].quality)
 
     def test_conjured_item(self):
         items = [Item("Conjured Cookie", 3, 6)]
